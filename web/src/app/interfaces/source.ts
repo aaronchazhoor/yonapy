@@ -1,5 +1,5 @@
 export interface Source {
-  id: string
+  id: string;
   name: string;
   title: string;
   link: string;
