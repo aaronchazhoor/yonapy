@@ -1,4 +1,5 @@
 export interface Source {
+  name: string;
   title: string;
   link: string;
   displayLink: string;
