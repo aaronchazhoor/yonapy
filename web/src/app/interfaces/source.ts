@@ -2,6 +2,7 @@ export interface Source {
   name: string;
   title: string;
   link: string;
+  url: string;
   displayLink: string;
   isFamilyFriendly: boolean;
   displayUrl: string;
