@@ -8,27 +8,28 @@ const SourceItem: FC<{ source: Source; index: number }> = ({
   source,
   index,
 }) => {
-  const { id, name, url } = source;
-  const domain = new URL(url).hostname;
+  const { title, link, displayLink } = source;
+  const domain = new URL(link).hostname;
+
   return (
     <div
       className="relative text-xs py-3 px-3 bg-zinc-100 hover:bg-zinc-200 rounded-lg flex flex-col gap-2"
-      key={id}
+      key={link}
     >
-      <a href={url} target="_blank" className="absolute inset-0"></a>
+      <a href={link} target="_blank" className="absolute inset-0"></a>
       <div className="font-medium text-zinc-950 text-ellipsis overflow-hidden whitespace-nowrap break-words">
-        {name}
+        {title}
       </div>
       <div className="flex gap-2 items-center">
         <div className="flex-1 overflow-hidden">
           <div className="text-ellipsis whitespace-nowrap break-all text-zinc-400 overflow-hidden w-full">
-            {index + 1} - {domain}
+            {index + 1} - {displayLink}
           </div>
         </div>
         <div className="flex-none flex items-center">
           <img
             className="h-3 w-3"
-            alt={domain}
+            alt={displayLink}
             src={`https://www.google.com/s2/favicons?domain=${domain}&sz=${16}`}
           />
         </div>
