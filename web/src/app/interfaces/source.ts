@@ -1,9 +1,9 @@
 export interface Source {
-  id: string;
+  title: string;
   name: string;
-  url: string;
+  link: string;
   isFamilyFriendly: boolean;
-  displayUrl: string;
+  displayLink: string;
   snippet: string;
   deepLinks: { snippet: string; name: string; url: string }[];
   dateLastCrawled: string;
